@@ -1,0 +1,10 @@
+build:
+  publish: build
+  command: npm run build
+  functions: functions
+
+plugins:
+  - package: ./plugins/orchestrate
+    config:
+      valueOne: foo
+      valueTwo: bar

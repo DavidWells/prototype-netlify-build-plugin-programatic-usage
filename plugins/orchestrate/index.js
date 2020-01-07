@@ -12,6 +12,7 @@ module.exports = function orchestratorPlugin(config) {
   })
 
   return {
+    name: 'netlify-plugin-orchestrate',
     onInit: async (context) => {
       // these plugins can run in parallel to speed things up
       const [db, files] = await Promise.all([

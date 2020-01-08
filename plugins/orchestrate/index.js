@@ -20,7 +20,8 @@ module.exports = function orchestratorPlugin(config) {
         two.onInit(context),
       ])
       // Programatically run onInit (could be any method exposed)
-      await pluginThree.onInit(context, db, files)
+      const output = await pluginThree.onInit(context, db, files)
+      console.log(`plugin-orchestrate: Output from plugin 3 = ${JSON.stringify(output)}`)
     },
   }
 }

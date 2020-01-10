@@ -10,5 +10,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@netlify/plugin-sitemap": "0.0.3"
+  }
 }

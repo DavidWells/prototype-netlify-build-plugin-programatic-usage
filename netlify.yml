@@ -4,6 +4,7 @@ build:
   functions: functions
 
 plugins:
+  - package: '@netlify/plugin-sitemap'
   - package: ./plugins/orchestrate
     config:
       valueOne: foo

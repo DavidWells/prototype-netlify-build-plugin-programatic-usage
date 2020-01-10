@@ -1,9 +1,7 @@
 build:
   publish: build
-  command: npm run build
+  command: npm run build && printenv
   functions: functions
-  lifecycle:
-    onBuild: printenv
 
 plugins:
   - package: '@netlify/plugin-sitemap'

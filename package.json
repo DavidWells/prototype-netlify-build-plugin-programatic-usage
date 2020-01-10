@@ -12,6 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@netlify/plugin-sitemap": "0.0.3"
+    "@netlify/plugin-sitemap": "^0.1.0"
   }
 }

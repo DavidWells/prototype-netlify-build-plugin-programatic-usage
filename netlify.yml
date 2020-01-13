@@ -5,6 +5,9 @@ build:
 
 plugins:
   - package: '@netlify/plugin-sitemap'
+    config:
+      dir: build
+      baseUrl: ${env:URL, 'https://google.com'}
   - package: ./plugins/orchestrate
     config:
       valueOne: foo

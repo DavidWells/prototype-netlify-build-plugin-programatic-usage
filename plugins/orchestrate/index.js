@@ -13,6 +13,7 @@ module.exports = function orchestratorPlugin(config) {
   return {
     name: 'netlify-plugin-orchestrate',
     onInit: async (context) => {
+      console.log(context)
       /* Run plugin 1 & 2 in parallel to speed things up */
       const [ db, files ] = await Promise.all([
         one.onInit(context),
@@ -23,5 +24,19 @@ module.exports = function orchestratorPlugin(config) {
       console.log('netlify-plugin-orchestrate output from pluginThree.onInit')
       console.log(JSON.stringify(outputFromThree))
     },
+    onPreBuild: ({ utils }) => {
+      const { git } = utils
+
+      /* Do stuff if files modified */
+      if (git.modifiedFiles.length) {
+        console.log('Modified files:', git.modifiedFiles)
+      }
+      const htmlFiles = git.fileMatch('**/*.html')
+      console.log('html files git info:', htmlFiles)
+
+      if (htmlFiles.edited) {
+        console.log('>> Run thing because HTML has changed\n')
+      }
+    }
   }
 }

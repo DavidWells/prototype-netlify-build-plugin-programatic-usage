@@ -34,8 +34,9 @@ module.exports = function orchestratorPlugin(config) {
       const htmlFiles = git.fileMatch('**/*.html')
       console.log('html files git info:', htmlFiles)
 
-      if (htmlFiles.edited) {
-        console.log('>> Run thing because HTML has changed\n')
+      if (!htmlFiles.edited) {
+        console.log('>> EXIT BUILD BC HTML HAS NOT CHANGED\n')
+        process.exit(1)
       }
     }
   }

@@ -1,0 +1,19 @@
+redirects:
+  - from: /*
+    to: '/blog/:splat'
+  - from: /old-path
+    to: /new-path
+    status: 302
+    force: true
+  - from: /gated-path
+    status: 200
+    conditions:
+      Role:
+        - admin
+    force: true
+  - from: /foo
+    to: /index.html
+    status: 200
+  - from: /bar
+    to: /index.html
+    status: 200
